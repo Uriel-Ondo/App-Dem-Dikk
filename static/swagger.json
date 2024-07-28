@@ -1,0 +1,339 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Dakar Dem Dikk API Documentation",
+    "version": "1.0.0",
+    "title": "Dakar Dem Dikk API"
+  },
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "buses",
+      "description": "Operations about buses"
+    },
+    {
+      "name": "trajets",
+      "description": "Operations about trajets"
+    },
+    {
+      "name": "horaires",
+      "description": "Operations about horaires"
+    }
+  ],
+  "paths": {
+    "/buses": {
+      "get": {
+        "tags": ["buses"],
+        "summary": "Get all buses",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Bus"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["buses"],
+        "summary": "Add a new bus",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Bus object that needs to be added",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Bus"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Bus created"
+          }
+        }
+      }
+    },
+    "/buses/{id}": {
+      "put": {
+        "tags": ["buses"],
+        "summary": "Update an existing bus",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Bus object that needs to be updated",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Bus"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Bus updated"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["buses"],
+        "summary": "Delete a bus",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Bus deleted"
+          }
+        }
+      }
+    },
+    "/trajets": {
+      "get": {
+        "tags": ["trajets"],
+        "summary": "Get all trajets",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Trajet"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["trajets"],
+        "summary": "Add a new trajet",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Trajet object that needs to be added",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Trajet"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Trajet created"
+          }
+        }
+      }
+    },
+    "/trajets/{id}": {
+      "put": {
+        "tags": ["trajets"],
+        "summary": "Update an existing trajet",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Trajet object that needs to be updated",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Trajet"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Trajet updated"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["trajets"],
+        "summary": "Delete a trajet",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Trajet deleted"
+          }
+        }
+      }
+    },
+    "/horaires": {
+      "get": {
+        "tags": ["horaires"],
+        "summary": "Get all horaires",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Horaire"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["horaires"],
+        "summary": "Add a new horaire",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Horaire object that needs to be added",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Horaire"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Horaire created"
+          }
+        }
+      }
+    },
+    "/horaires/{id}": {
+      "put": {
+        "tags": ["horaires"],
+        "summary": "Update an existing horaire",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Horaire object that needs to be updated",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Horaire"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Horaire updated"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["horaires"],
+        "summary": "Delete a horaire",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Horaire deleted"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Bus": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        },
+        "capacity": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "Trajet": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "start": {
+          "type": "string"
+        },
+        "end": {
+          "type": "string"
+        },
+        "distance": {
+          "type": "number",
+          "format": "float"
+        }
+      }
+    },
+    "Horaire": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "bus_id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "trajet_id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "departure_time": {
+          "type": "string",
+          "format": "time"
+        },
+        "arrival_time": {
+          "type": "string",
+          "format": "time"
+        }
+      }
+    }
+  }
+}
